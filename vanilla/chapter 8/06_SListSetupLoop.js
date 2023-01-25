@@ -1,0 +1,3 @@
+// [] SList: Setup Loop
+// In preparation for tomorrow, create a sequence of slNodes that form a closed loop. Your function’s first argument should signify how many nodes total, and the second should be which node number is pointed to by the last node. Give nodes sequential numbers as values, for clarity. Calling setupLoop(5, 3) should return a circular list of 1=>2=>3=>4=>5=>3=>4=>5=>3....
+
