@@ -112,8 +112,7 @@ We know you can’t get enough and would wait in line to receive a stack of addi
 41. [] Stack: Mirror
 42. [] Weak Finger
 43. [] Short Answer Questions: Queues and Stacks
-44. [] Short Answer Questions: Queues and Stacks
-45. [] Weekend Challenge: Stacks and Queues
+44. [] Weekend Challenge: Stacks and Queues
 
 Queues and Stacks Review
 Data structures hold and manage data. Each data structure is optimized for some specific use and as a result is less optimized for other uses. In this chapter, we studied data structures that are good abstract data types. An abstract data type satisfies a specific external interface (such as push, pop, top, isEmpty, size and contains) but can be internally implemented in different ways (e.g. with an Array or with an SList).
