@@ -1,0 +1,5 @@
+// [] Last Digit of A to the B
+// Modern computers can handle very large numbers, but they do have their limits. A number that is repeatedly multiplied by itself will eventually exceeds a computer’s ability to accurately represent it. (Note: the number of times it is multiplied by itself is called an exponent.) For an optional end-of-chapter challenge, determine the smallest (least significant) digit of a number that is potentially very, very large. You may find that you must do this without computing the actual (unimaginably large) number.
+
+// Implement a function lastDigitAtoB(a,b) that accepts two nonnegative integers. It should return the last digit of a number found by raising the first number (a) to an exponent of the second number (b). Examples: given (3,4), you should return 1 (3 * 3 * 3 * 3 is 81, whose last digit is 1). Given (12,5), return 2 (which is the least significant digit of 248832: 12 * 12 * 12 * 12 * 12). How high can you scale your solution? For example, what is the return value for (237,124)?
+

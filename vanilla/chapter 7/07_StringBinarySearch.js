@@ -1,0 +1,3 @@
+// [] String: Binary Search
+// You will be given a very long string and a single character. Return whether that character is present in the string. Note: the characters in the string have been arranged so that the charCodeAt() values for each character are monotonically ascending from the beginning of the string to the back. Use the fact that the string is effectively sorted. Don’t use built-in functions. Note: characters may not be exactly as you might have considered ‘alphabetized’, but char.charCodeAt() works well. Example: if your function is given the inputs (" &-0379DEFXZ[abcz|", "6"), it should return false. If instead it is sent (" &-0379DEFXZ[abcz|", "c"), return true. Remember, don’t iterate the string linearly!
+
