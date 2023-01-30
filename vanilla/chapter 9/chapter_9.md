@@ -53,53 +53,69 @@ Upon entering, we set returnVal, enter an IF, set intNum and call rSigma. At thi
 7. [] Zibonacci
 
 Dynamic Programming and Memoization
-(No, it’s not a typo – it really is ‘memoization’, not ‘memorization’.)
-Recursion is a powerful technique that allows us to explore multiple
-pathways. In general, we break a problem into smaller problems;
-often we simply feed those smaller problems in to the same function
-to eventually get a solution. Sometimes, it isn’t that clean –
-sometimes we need to save some partial progress to build upon in
-subsequent recursive calls. This is when a ‘memo’ is valuable.
-A memo is any of ‘note to self’ that you send along with a recursive
-call, so that it can take advantage of previous progress you have
-made. You might be able to incorporate this into a single-function
-recursive solution, by adding an additional parameter that is
-undefined when your function is called externally. In subsequent
-recursive calls you make to yourself, you could include a memo here
-that might be a fragment of a solution that you are trying to complete,
-or an array to which you are pushing all possible solutions – or
-perhaps both, using two parameters that are not in the original
-function call. Other times, your original function is an entry point,
-calling a recursive function using additional parameters, like this:
+(No, it’s not a typo – it really is ‘memoization’, not ‘memorization’.) 
+
+Recursion is a powerful technique that allows us to explore multiple pathways. In general, we break a problem into smaller problems; often we simply feed those smaller problems in to the same function to eventually get a solution. Sometimes, it isn’t that clean – sometimes we need to save some partial progress to build upon in subsequent recursive calls. This is when a ‘memo’ is valuable.
+
+A memo is any of ‘note to self’ that you send along with a recursive call, so that it can take advantage of previous progress you have made. You might be able to incorporate this into a single-function recursive solution, by adding an additional parameter that is undefined when your function is called externally. In subsequent recursive calls you make to yourself, you could include a memo here that might be a fragment of a solution that you are trying to complete, or an array to which you are pushing all possible solutions – or perhaps both, using two parameters that are not in the original function call. Other times, your original function is an entry point, calling a recursive function using additional parameters, like this:
+
 ///// Simple function to kick off the recursive version, with default
 // values for the number of opens pending (0), the substring fragment
 // we've built so far (""), and the array of complete solutions ([]).
-function allValidNParens(numParens) {
-var solutions = [];
-rValidNParens(numParens, 0, "", solutions);
-return solutions;
-}
+        
+        function allValidNParens(numParens) {
+            var solutions = [];
+            rValidNParens(numParens, 0, "", solutions);
+            return solutions;
+        }
+
 ///// Recursive All-Valid-Combinations-Of-N-Pairs-Parentheses func.
 // Parameters: number of parens remaining, number of opens pending,
 // unfinished substring fragment we're building, array of solutions
-function rValidNParens(parens, opens, subStr, solutions) {
-// If no parens/opens remain, this fragment is a valid solution.
-if (!parens && !opens) {
-solutions.push(subStr);
-}
-// If opens remain, one option is to close one.
-if (opens) {
-rValidNParens(parens, opens-1, subStr + ")", solutions);
-}
-// If unused parens remain, one option is to open a new one.
-if (parens) {
-rValidNParens(parens-1, opens+1, subStr + "(", solutions);
-}
-// solutions array is a 'live' obj; we don't need to return it.
-}
+    
+    function rValidNParens(parens, opens, subStr, solutions) {
+        // If no parens/opens remain, this fragment is a valid solution.
+        if (!parens && !opens) {
+            solutions.push(subStr);
+        }
+        // If opens remain, one option is to close one.
+        if (opens) {
+            rValidNParens(parens, opens-1, subStr + ")", solutions);
+        }
+        // If unused parens remain, one option is to open a new one.
+        if (parens) {
+            rValidNParens(parens-1, opens+1, subStr + "(", solutions);
+        }
+        // solutions array is a 'live' obj; we don't need to return it.
+    }
 
-This chapter you will familiarize yourself with recursion. Some or all
-of the following important concepts will be used in this chapter’s
-challenges.
-Base CasesForward ProgressCall StackMemoizationDynamic
-Programming
+This chapter you will familiarize yourself with recursion. Some or all of the following important concepts will be used in this chapter’s challenges.
+
+Base Cases Forward Progress Call Stack Memoization Dynamic Programming
+
+8. [] Recursive Binary Search
+9. [] Greatest Common Factor
+10. [] Tarai
+11. [] String: In-Order Subsets
+12. [] Recursive List Length
+13. [] Got Any Grapes?!?
+14. [] Collatz-apalooza
+15. [] Telephone Words
+16. [] Rising Squares
+17. [] Binary String Expansion
+18. [] String Anagrams
+19. [] Climbing Stairs
+20. [] Sum of Squares
+21. [] All Valid N Paors of Parens
+22. [] Towers of Hanoi
+23. [] IP Addresses
+24. [] Uneven Digits
+25. [] Generate All Possible Coin Change
+
+Some of these end-of-chapter challenges all assume that you have some familiarity with the game chess. If you don’t, here is all you need to know. Chessboards are square, with 8 rows of 8 squares each. Queens are one type of chess piece, and in a single move they can travel any number of squares in either of the horizontal directions (along a row), or either of the vertical directions (along a file or column), or either of the diagonal directions. A piece is considered under threat from a queen if it is situated in a square where that queen can directly move.
+
+26. [] Is Chess Move Safe
+27. [] Eight Queens
+28. [] All Safe Chess Squares
+29. [] N Queens
+30. [] Where's the Bug? (recursion version)
